@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss Game</title>
+</head>
+<body>
+    
+
+    <script>
+        let myPick = 'heads';
+        function compare (headsOrTails){
+            let computerMove = pickComputerMove();
+            if (headsOrTails === 'heads' && computerMove === 'heads'){
+                console.log('we both pick heads...TIE');
+            }else if (headsOrTails === 'tails' && computerMove === 'heads'){
+                console.log('Computer Picked Heads youu picked tails... You lose');
+            }else if (headsOrTails === 'heads' && computerMove === 'tails'){
+                console.log('i picked heads computer picked tails... I won');
+            }else if (headsOrTails === 'tails' && computerMove === 'tails'){
+                console.log('we both picked tails.... Tie');
+            }
+        }
+
+        function pickComputerMove (){
+            let computerPick = Math.floor(Math.random() * 2);
+            let PickOfPc  = ''
+            if (computerPick === 0) {
+                PickOfPc ='heads'
+            } else {
+                PickOfPc = 'tails';
+            }
+
+            return PickOfPc
+        }
+        
+    </script>
+</body>
+</html>

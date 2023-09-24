@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise</title>
+</head>
+<body>
+    
+
+    <script>
+        function greet (name){
+            if(!name){
+                console.log('Hi There');
+            }else{
+                console.log('hello ' + name);
+            }
+            
+        };
+        function convertToFahrenheit(valInCelcius){
+            return (valInCelcius* 9/5)+32;
+        }
+        function convertToCelcius(valInFahrenheit){
+            return (valInFahrenheit-32)*5/9;
+        }
+
+
+        function convertTemp (degrees, unit){
+            if(unit === 'F' ){
+                const result = convertToCelcius(degrees);
+                console.log(result);
+            }else if (unit === 'C'){
+                const result = convertToFahrenheit(degrees);
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+</html>
