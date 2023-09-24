@@ -25,25 +25,77 @@
         // delete products.newProperty;
         // console.log(products)
 
-        const products2 = {
-            name: 'shirt',
-            'delivery-time': '1 day',
-            rating: {
-                stars : 4.5,
-                count: 87
-            },
-            fun: function function1() {
-                console.log('function inside object')
-            }
+        // const products2 = {
+        //     name: 'shirt',
+        //     'delivery-time': '1 day',
+        //     rating: {
+        //         stars : 4.5,
+        //         count: 87
+        //     },
+        //     fun: function function1() {
+        //         console.log('function inside object')
+        //     }
+        // };
+        // console.log(products2.name);
+        // console.log(products2['delivery-time']);
+        // console.log(products2)
+        // console.log(products2.rating.count);
+        // products2.fun()
+        // console.log(JSON.stringify(products2))
+        // const jsonString = JSON.stringify(products2);
+        // console.log(JSON.parse(jsonString))
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        console.log(3.000.toString())
+        console.log(true.toString())
+
+        // the variables are references that points at the objects stores somewhere else in the computers memory 
+        const object1 = {
+            message: 'hello'
         };
-        console.log(products2.name);
-        console.log(products2['delivery-time']);
-        console.log(products2)
-        console.log(products2.rating.count);
-        products2.fun()
-        console.log(JSON.stringify(products2))
-        const jsonString = JSON.stringify(products2);
-        console.log(JSON.parse(jsonString))
+        const object2 =object1;
+        object1.message = 'good job';
+        console.log(object1);
+        console.log(object2)
+
+        // comparing objects
+        const object3 = {
+            message: 'good job'
+        };
+
+        console.log(object3 === object1);
+        console.log(object1 ===object2);
+
+
+        const object4 = {
+                message: 'good job',
+                price: 799
+            };
+
+            // destructuring
+            const {message, price}  = object4;
+            console.log(message);
+            console.log(price);
+
+            // shorthand property
+            const object5 = {
+                //message:message
+                message
+            };
+            console.log(object5)
+
+            // shorthand method
+            const object6 = {
+                // method: function function1(){
+                //     console.log('method')
+                // }
+                method(){
+                    console.log('method');
+                }
+            };
+            object6.method()
+
     </script>
 </body>
 </html>
