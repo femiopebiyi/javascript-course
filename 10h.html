@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM projects</title>
+    <style>
+        .subscribe-button {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .clicked {
+            background-color: gray;
+            color: rgb(240, 240, 240);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .cost-input {
+            font-size: 15px;
+            padding: 10px;
+
+        }
+
+        .calculate-button {
+            background: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="
+        subscribe();
+        this.classList.toggle('clicked')
+    " class="js-subscribe-button subscribe-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost Of Order" class="js-cost-input cost-input" onkeydown="
+        handleCostKeyDown();
+        
+    ">
+    <button onclick="
+        calculateTotal();
+    " class="calculate-button">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+
+        let display = document.querySelector('.js-total-cost')
+        // String(25);
+        // console.log('25' - 5);
+        // console.log('25' + 5);
+
+
+
+
+
+        function handleCostKeyDown() {
+            const keyPressed = event.key;
+            if (keyPressed === 'Enter') {
+                calculateTotal();
+            }
+        }
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input')
+            let cost = Number(inputElement.value)
+            let message;
+            if(cost <40 && cost >0){
+                cost +=10
+                message = `$${cost}`
+            } else if(cost <0){
+                message = `Error: cost cannot be lest than 0$... Try Again`
+            } else if (cost>40){
+                cost = cost
+                message = `$${cost}`
+            }
+
+
+        display.innerHTML = message
+        
+        };
+
+        function subscribe() {
+            const buttonElement = document.querySelector('.js-subscribe-button')
+
+            if (buttonElement.innerHTML === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed'
+
+            } else {
+                buttonElement.innerHTML = 'Subscribe'
+            }
+
+            // const check = buttonElement.innerText === 'Subscribe' ? buttonElement.innerText = 'Subscribed' : buttonElement.innerText = 'Subscribe'
+        };
+    </script>
+</body>
+
+</html>

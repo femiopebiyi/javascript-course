@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .amazon{
+            font-size: 20px;
+            padding: 10px 40px;
+            border: none;
+            border-radius: 50px;
+            background: rgb(255, 216, 20);
+        }
+        .request{
+            color: white;
+            background-color: black;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            padding: 15px 15px;
+            border: none;
+            border-radius: 6px;
+        }
+        .games{
+            color: black;
+            background-color: rgb(230,230,230);
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            padding: 15px 15px;
+            border-radius: 5px;
+
+        }
+        .is-toggled{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button class="amazon">Add to Cart</button>
+    <button class="request">Request now</button>
+    <button class="schedule">Schedule for later</button>
+    <button class="js-button">Test</button> -->
+
+    <button class="games first">Gaming</button>
+    <button class="games second">Music</button>
+    <button class="games third">Tech</button>
+
+    <script>
+        let game =  document.querySelector('.first');
+        let music = document.querySelector('.second')
+        let tech = document.querySelector('.third')
+
+        
+        game.addEventListener('click', function(){
+            this.classList.toggle('is-toggled')
+            if (music.classList.contains('is-toggled')){
+                music.classList.remove('is-toggled')
+            }else if(tech.classList.contains('is-toggled')){
+                tech.classList.remove('is-toggled')
+            }
+        })
+            
+        music.addEventListener('click', function(){
+            this.classList.toggle('is-toggled');
+            if(game.classList.contains('is-toggled')){
+                game.classList.remove('is-toggled')
+            } else if(tech.classList.contains('is-toggled')){
+                tech.classList.remove('is-toggled')
+            }
+            
+        })
+        tech.addEventListener('click', function(){
+            this.classList.toggle('is-toggled')
+            if (music.classList.contains('is-toggled')){
+                music.classList.remove('is-toggled')
+            } else if(game.classList.contains('is-toggled')){
+                game.classList.remove('is-toggled');
+            }
+            
+        })
+        
+    </script>
+</body>
+</html>

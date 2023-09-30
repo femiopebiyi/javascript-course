@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Your Name" class="js-input" onkeydown="
+        const enter = event.key;
+        if(enter === 'Enter'){
+            displayInput();
+        }
+        ">
+
+
+    <button class="js-button" onclick="
+        displayInput()
+    ">Submit</button>
+    <p class="display"></p>
+
+
+
+    <script>
+        function displayInput (){
+            display.innerHTML = `Your Name is: ${input.value}`;
+        }
+        const submit = document.querySelector('.js-button');
+        let input = document.querySelector('.js-input');
+        let display = document.querySelector('.display')
+
+
+    </script>
+</body>
+</html>
