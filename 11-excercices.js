@@ -89,16 +89,59 @@
 // }
 
 
-function minMax (nums){
-    let answer = {};
-    
-    for(let i = 0; i<nums.length; i++){
-        if (nums[i]> nums[i+1]){
-            answer.min = nums[i]
-        } 
-        if(nums[i]<nums[i+1]){
-            answer.max = nums[i]
-        }
+
+      // function minMax(nums) {
+        // We'll set the starting values of min and max
+        // as the first value in the array. (This is
+        // just one way to set the starting values. You
+      //   // can use another way if you like.)
+      //   const result = {
+      //     min: nums[0],
+      //     max: nums[0]
+      //   };
+
+      //   for (let i = 0; i < nums.length; i++) {
+      //     const value = nums[i];
+
+      //     // If the value is less than the min,
+      //     // update the min.
+      //     if (value < result.min) {
+      //       result.min = value;
+      //     }
+
+      //     // If the value is greater than the max,
+      //     // update the max.
+      // //     if (value > result.max) {
+      // //       result.max = value;
+      // //     }
+
+      //     if(value === result.min && value === result.max){
+      //       result.max = value;
+      //       result.min = value
+      //     }
+
+      //     if(nums === undefined){
+      //       result.min = null
+      //       result.max = null
+      //     }
+      //   }
+
+      //   return result;
+      // }
+
+      // console.log(minMax([1, -3, 5]));
+      // console.log(minMax([-2, 3, -5, 7, 10]));
+
+
+
+function  countWords (words){
+  let count = {};
+  for (let i = 0 ;i<words.length; i++){
+    let repeated = words[0]
+    if(words[i] === repeated){
+      repeated = words[i]
+      count.words[i] = 1
     }
-    console.log(answer)
+  }
+  return count
 }

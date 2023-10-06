@@ -10,15 +10,9 @@ addButton.addEventListener('click', function(){
 
 })
 
-let todoList = [{
-    name:'make dinner',
-    dueDate: '2023-9-30' 
-},
-{ 
-    name:'omaiwa',
-    dueDate:'2023-9-30',
-}
-];
+let todoList = [];
+
+
 
 function addToDiv (){
     let todoHTML = ''
@@ -40,7 +34,8 @@ for(let i = 0; i<todoList.length; i++){
     todoHTML  += html
 }
 
-space.innerHTML = todoHTML
+space.innerHTML = todoHTML 
+localStorage.setItem('todo', JSON.stringify())
 
 }
 

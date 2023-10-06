@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="button1">Add</button>
+
+    <button class="add">Add to Cart</button>
+    <p class="display"></p>
+
+    <script>
+        let add = function(){
+            console.log(3+2)
+            console.log(3+2)
+        }
+
+        function runTwice(param){
+            param()
+        }
+
+        runTwice(function(){
+            console.log('12b')
+            console.log('12b')
+        })
+
+        runTwice(add)
+
+        const button1 = document.querySelector('.button1');
+
+        button1.addEventListener('click', function(){
+            setTimeout(function(){
+                button1.innerHTML = 'Finished'
+            }, 3000)
+            button1.innerHTML = 'Loading...'
+        })
+
+        let add2 =  document.querySelector('.add');
+        let display = document.querySelector('.display')
+
+        add2.addEventListener('click', function(){
+            display.innerHTML = 'Added'
+
+            setTimeout(function(){
+                display.innerHTML = ''
+            }, 3000)
+        })
+        document.title = "2 new messages"
+        setInterval(function(){
+            document.title = 'App'
+        },3000)
+
+        
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 const addButton = document.querySelector('button');
 const inputElement = document.querySelector('.js-name-input');
-
+const dateInput = document.querySelector('#due-Date')
 let space = document.querySelector('.todo-space')
 
 addButton.addEventListener('click', function(){
@@ -10,35 +10,43 @@ addButton.addEventListener('click', function(){
 
 })
 
-let todoList = [{
-    name:'make dinner',
-    dueDate: '2023-9-30' 
-},
-{ 
-    name:'omaiwa',
-    dueDate:'2023-9-30',
-}
+let todoList = [
 ];
 
 function addToDiv (){
     let todoHTML = ''
-
-for(let i = 0; i<todoList.length; i++){
-    const todoObject = todoList[i];
+    todoList.forEach((todoObject, index) => {
+        
     const name = todoObject.name;
     const dueDate = todoObject.dueDate;
     let html = `
     <div>${name}</div>
-    <div>${dueDate}</div>
+    <div>${dueDate}       <input type="checkbox"></div>
     <button onclick="
-        todoList.splice(${i},1);
+        todoList.splice(${index},1);
         addToDiv()
     " class="delete-button">Delete</button>
-    
+     
     
     `;
     todoHTML  += html
-}
+    })
+// for(let i = 0; i<todoList.length; i++){
+//     const todoObject = todoList[i];
+//     const name = todoObject.name;
+//     const dueDate = todoObject.dueDate;
+//     let html = `
+//     <div>${name}</div>
+//     <div>${dueDate}</div>
+//     <button onclick="
+//         todoList.splice(${i},1);
+//         addToDiv()
+//     " class="delete-button">Delete</button>
+    
+    
+//     `;
+//     todoHTML  += html
+// }
 
 space.innerHTML = todoHTML
 
@@ -67,3 +75,12 @@ inputElement.addEventListener('keydown', function (event){
         inputElement.value = ''
     }
 })
+
+dateInput.addEventListener('keydown', function(event){
+    if (event.key === 'Enter'){
+        addTodo()
+        addToDiv()
+        inputElement.value = ''
+    }
+})
+
